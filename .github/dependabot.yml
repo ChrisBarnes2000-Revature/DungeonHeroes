@@ -1,13 +1,38 @@
 # https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# https://github.com/cookiecutter-flask/cookiecutter-flask/blob/master/.github/dependabot.yml
 version: 2
 updates:
-- package-ecosystem: "pip"
-  # Look for `build.gradle` in the `root` directory
-  directory: "/"
-  # Check for updates once weekly
-  schedule:
-      interval: "weekly"
-      ignore:
-          # Ignore updates to packages that start 'aws'
-          # Wildcards match zero or more arbitrary characters
-          - dependency-name: "flask*"
+  - package-ecosystem: "npm"
+    directory: "/flask-demo"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "github-actions"
+    directory: "/flask-demo"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/flask-demo/requirements"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/flask-demo"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "daily"
