@@ -1,0 +1,13 @@
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+version: 2
+updates:
+- package-ecosystem: "pip"
+  # Look for `build.gradle` in the `root` directory
+  directory: "/"
+  # Check for updates once weekly
+  schedule:
+      interval: "weekly"
+      ignore:
+          # Ignore updates to packages that start 'aws'
+          # Wildcards match zero or more arbitrary characters
+          - dependency-name: "flask*"
