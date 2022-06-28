@@ -2,8 +2,13 @@
 # ---- https://docs.docker.com/engine/reference/builder/#dockerignore-file ---- #
 
 .DS_Store
-.git/
-.gitignore
+
 LICENSE
 *.md
+
+.gitignore
+
+.git/
 .venv/
+.pytest_cache
+__pycache__/
