@@ -49,11 +49,15 @@ pipeline {
         }
     }
     post {
-        always {
-            junit '**/target/*.xml'
+        SUCCESS {
+            mail to: 'Chris.Barnes.2000@me.com',
+            subject: 'The Pipeline success :(',
+            body: '${env.BUILD_ID} on ${env.JENKINS_URL} Succeeded'
         }
         failure {
-            mail to: Chris.Barnes.2000@me.com, subject: 'The Pipeline failed :( \n${env.BUILD_ID} on ${env.JENKINS_URL}'
+            mail to: 'Chris.Barnes.2000@me.com',
+            subject: 'The Pipeline failed :(',
+            body: '${env.BUILD_ID} on ${env.JENKINS_URL} Failed'
         }
     }
 }
