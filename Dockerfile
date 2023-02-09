@@ -4,7 +4,7 @@
 # TLDR: Alpine is very slow when it comes to running Python!
 
 # STEP 1: Install base image. Optimized for Python.
-FROM python:3.10.5-slim-bullseye
+FROM python:3.11.2-slim-bullseye
 
 # STEP 2: Copy the source code in the current directory to the container.
 # Store it in a folder named /app.
